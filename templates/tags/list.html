@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+{% block title %}
+Tags
+{% endblock title %}
+
+{% block posthead %}
+{% for term in terms %}
+<link rel="prerender" href="{{ term.permalink }}" />
+{% endfor %}
+{% endblock posthead %}
+
+{% block content %}
+<h1 class="text-4xl leading-snug font-bold text-gray-900 capitalize">{{ taxonomy.name }}</h1>
+<section class="border-t-2 py-4 mt-3">
+  <ul class="inline-flex gap-2">
+    {% for term in terms %}
+    <li class="bg-gray-100 hover:bg-gray-200 transition-all duration-500 py-2 px-3 rounded-lg text-sm">
+      <a href="{{ term.permalink }}">#{{ term.name }} ({{ term.pages | length }})</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock content %}

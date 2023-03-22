@@ -1,0 +1,21 @@
+{% extends "page.html" %}
+{% import "partials/post-preview.html" as post_macros %}
+
+{% block title %}{{ config.title }} | {{ section.title }}{% endblock title %}
+
+{% block content %}
+<main>
+  <h1 class="text-4xl leading-snug font-bold text-gray-900">{{ section.title }}</h1>
+  <section class="border-t-2 py-4 mt-3">
+    {% block posthead %}
+    {% for post in section.pages %}
+    <link rel="prerender" href="{{ post.permalink }}" />
+    {% endfor %}
+    {% endblock posthead %}
+    {% for post in section.pages %}
+    {{ post_macros::post_preview(post=post) }}
+    {% endfor %}
+  </section>
+
+</main>
+{% endblock content %}

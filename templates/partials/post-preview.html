@@ -1,0 +1,23 @@
+{% macro post_preview(post) %}
+<article class="flex flex-col gap-1 mb-3">
+  <h2 class="text-3xl text-pink-500 hover:text-pink-600"><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+  <small class="text-sm text-gray-600">
+    {{ post.date| date(format="%B %d, %Y") }} — {{ post.word_count }} words - {{ post.reading_time }} mins
+  </small>
+  <div class="mt-2">
+    {% if post.summary -%}
+    {{ post.summary }}
+    {% else %}
+    {{ post.content | safe | striptags | truncate(length=300) }}
+    {%- endif %}
+  </div>
+  <a href="{{ post.permalink }}"
+    class="inline-flex gap-2 text-sm font-semibold items-center text-pink-500 hover:text-pink-600 ">read
+    more
+    <span class="w-4 h-4 stroke-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+      </svg>
+    </span></span></a>
+</article>
+{% endmacro input %}

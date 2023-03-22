@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="{% block description %}{{ section.description | default(value=config.description) }}{% endblock description %}">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    {% block extra_head %}
+    <link rel="stylesheet" href="{{ get_url(path='styles/styles.css') | safe }}" />
+    {% endblock extra_head %}
+    <script defer data-domain="lyudmilivanov.com" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body>
+    <div class="container mx-auto w-full mt-20 px-6 pb-12 xl:w-1/2 xl:px-0 ">
+        {%include "partials/header.html" %}
+        {% block content %}
+        {% set blog = get_section(path="blog/_index.md") %}
+        {% if section.content or blog.pages %}
+        <main class="mt-2">
+            {% if section.content %}
+            <div {% if blog.pages %}class="prose" {% endif %}>
+                {{ section.content | safe }}
+            </div>
+            {% endif %}
+            {% if blog.pages %}
+            <div>
+                <h2 class="text-pink-500 text-xl">Latest posts</h2>
+                <ul class="font-semibold">
+                    {% for post in blog.pages | slice(end=20) %}
+                    <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endif %}
+        </main>
+        {% endif %}
+        {% endblock content %}
+        {% include "partials/footer.html" %}
+    </div>
+</body>
+
+</html>
