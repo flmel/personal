@@ -1,35 +1,49 @@
-name: Zola on GitHub Pages
+# Trigger the workflow on push or pull request
+on: [push, pull_request]
 
-on:
-  push:
-    branches:
-      - main 
-  pull_request:
-  
+name: Build
 jobs:
-  build:
+  build-1:
+    name: Build with minimal options
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v3.0.0
-      - name: Build only 
-        uses: shalzz/zola-deploy-action@master
-        env:
-          BUILD_DIR: docs
-          BUILD_ONLY: true
-          BUILD_FLAGS: --drafts
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-  build_and_deploy:
+    - uses: actions/checkout@master
+    - name: Build with the latest action rev
+      uses: shalzz/zola-deploy-action@master
+      env:
+        BUILD_ONLY: true
+        BUILD_DIR: test-site
+  build-2:
+    name: Build with BUILD_FLAGS
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v3.0.0
-      - name: Build and deploy
-        uses: shalzz/zola-deploy-action@master
-        env:
-          BUILD_DIR: docs
-          PAGES_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@master
+    - name: Build with the latest action rev
+      uses: shalzz/zola-deploy-action@master
+      env:
+        BUILD_ONLY: true
+        BUILD_DIR: test-site
+        BUILD_FLAGS: --drafts --base-url example.com
+  build-3:
+    name: Build with CHECK_LINKS
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build with the latest action rev
+      uses: shalzz/zola-deploy-action@master
+      env:
+        BUILD_ONLY: true
+        BUILD_DIR: test-site
+        CHECK_LINKS: true
+  build-4:
+    name: Build with CHECK_LINKS and CHECK_FLAGS
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build with the latest action rev
+      uses: shalzz/zola-deploy-action@master
+      env:
+        BUILD_ONLY: true
+        BUILD_DIR: test-site
+        CHECK_LINKS: true
+        CHECK_FLAGS: --drafts
