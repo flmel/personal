@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Lyudmil Ivanov - hello world</title>
+    <link href="https://lyudmilivanov.com/tags/hello-world/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://lyudmilivanov.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-03-23T00:00:00+00:00</updated>
+    <id>https://lyudmilivanov.com/tags/hello-world/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Hello world!</title>
+        <published>2023-03-23T00:00:00+00:00</published>
+        <updated>2023-03-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://lyudmilivanov.com/blog/hello-world/" type="text/html"/>
+        <id>https://lyudmilivanov.com/blog/hello-world/</id>
+        
+        <content type="html">&lt;p&gt;There we go! My first blog post ever.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve wanted to do this for a while, but I finally had the courage to go for it. I&#x27;m not quite sure why I put it off for so long. Perhaps it was due to imposter syndrome, procrastination, or self-doubt – things we all face to some degree.&lt;&#x2F;p&gt;
+&lt;p&gt;What do I hope to achieve with this blog?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop the habit of writing&lt;&#x2F;li&gt;
+&lt;li&gt;Improve my language skills as a non-native speaker&lt;&#x2F;li&gt;
+&lt;li&gt;Share my understandings, findings, and skills to help my future self and hopefully others&lt;&#x2F;li&gt;
+&lt;li&gt;Maybe even overcome my long-term commitment issues... just kidding... not kidding...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;What do I want to blog about?&lt;&#x2F;p&gt;
+&lt;p&gt;Programming, technology, personal musings, and adventures. As you&#x27;ll probably notice (if I manage to keep up with this blog) I have a wide range of interests.&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s all for now, &lt;em&gt;&amp;quot;start small&amp;quot;&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

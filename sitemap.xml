@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://lyudmilivanov.com/</loc>
+    </url>
+    <url>
+        <loc>https://lyudmilivanov.com/about/</loc>
+    </url>
+    <url>
+        <loc>https://lyudmilivanov.com/blog/</loc>
+    </url>
+    <url>
+        <loc>https://lyudmilivanov.com/blog/hello-world/</loc>
+        <lastmod>2023-03-23</lastmod>
+    </url>
+    <url>
+        <loc>https://lyudmilivanov.com/tags/</loc>
+    </url>
+    <url>
+        <loc>https://lyudmilivanov.com/tags/hello-world/</loc>
+    </url>
+</urlset>
