@@ -1,1 +1,1 @@
-# personal
+# Personal site built with zola and tailwindcss
